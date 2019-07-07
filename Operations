@@ -1,0 +1,156 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+double rasing(double x, double y);
+
+int main() 
+
+{
+
+int i, x, y, z;
+char choice, nextchoice;
+double base, exponent;
+  
+  
+
+do
+{
+cout << "\n__________________________________________________________\n";
+cout << "\n Operations:\n" << endl;
+cout << "  1 - Absolute value of x" << endl;
+cout << "  2 - Factorial of x" << endl;
+cout << "  3 - x raise to the power of y" << endl;
+cout << "  4 - Determine whether x is divisible of y" << endl;
+	
+
+cout <<	"\n Please choose an operation to be executed: ";
+cin >> choice;
+	
+cout << "\n__________________________________________________________\n";
+	
+	switch(choice) {
+	
+	case '1':
+		cout << "\nYou picked Operation 1: Absolute value of x\n";
+		cout << "\nEnter the value of x: ";
+		cin >> x;
+		
+		
+		if (x<0) {
+		
+		cout << "\nThe absolute value of x is " << x*(-1) << endl;
+		cout << "\n__________________________________________________________\n";	
+		
+		}
+		
+		else if (x>=0) {
+		cout << "\nThe absolute value of x is " << x << endl;
+		cout << "\n__________________________________________________________\n";
+		}
+		
+		cout << "\nPress any key to use another operation" << endl;	
+		cout << "Press 0 to Exit the program" << endl;	
+		cin >> nextchoice;
+		
+		break;
+		
+		
+	case '2': 
+		cout << "\nYou picked Operation 2: Factorial of x\n";
+		cout << "\nEnter a positive value of x: ";
+		cin >> x;
+
+	{
+	int fact = 1, i;
+    for(i=1; i<=x; i++)
+      fact = fact * i;
+    cout << "\nFactorial of " << x << " is " << fact;	
+	}
+	
+    cout << "\n__________________________________________________________\n";
+	cout << "\nPress any key to use another operation" << endl;	
+	cout << "Press 0 to Exit the program" << endl;	
+	cin >> nextchoice;
+	
+	break;
+    
+    case '3':
+    	
+	double base, exponent;
+  
+  	cout << "\nYou picked Operation 3: x raise to the power of y\n\n";
+	cout<< " Please input value of x: " ;
+  	cin>> base;
+  	cout<< " Please input value of y: " ;
+  	cin>> exponent;
+
+ 	cout<< endl;
+	cout << " " << base << " ^ " << exponent << " = " << rasing(base,exponent);  
+	
+	
+	cout << "\n__________________________________________________________\n";
+	cout << "\nPress any key to use another operation" << endl;	
+	cout << "Press 0 to Exit the program" << endl;	
+	cin >> nextchoice;
+	
+	
+  	break;
+  	
+  	case '4':
+  		cout << "\nYou picked Operation 4: Determine whether x is divisible of y\n";
+		cout << "\nEnter the value of x: ";
+		cin >> x;
+		cout << "\nEnter the value of y: ";
+		cin >> y;
+		cout << endl;
+	
+    if (x % y == 0)
+        cout << x << " is divisible by " << y;
+    else
+        cout << x << " is not divisible by " << y;
+		
+		cout << "\n__________________________________________________________\n";
+		cout << "\nPress any key to use another operation" << endl;	
+		cout << "Press 0 to Exit the program" << endl;	
+		cin >> nextchoice;
+		
+	break;
+    	
+	default:
+    
+        cout << "\nERROR! Input is not correct";
+        break;      
+	
+		
+	}	
+    
+    
+} while (nextchoice);	
+
+_getch();
+return 0;
+}
+
+double rasing(double x, double y){
+  
+   if(y == 0){
+     return 1;
+   }
+   
+   else if(y == 1){
+     return x;
+   }
+
+   else if(y > 0){
+   return x * (rasing(x, y-1));
+   double result = x;
+  }
+  
+  else if (y < 0){
+    return 1/( x * (rasing(x, -y-1)));
+    double result = x;
+  }
+  
+ }
+ 
