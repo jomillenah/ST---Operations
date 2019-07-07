@@ -11,8 +11,7 @@ int main()
 int i, x, y, z;
 char choice, nextchoice;
 double base, exponent;
-  
-  
+
 
 do
 {
@@ -29,8 +28,10 @@ cin >> choice;
 	
 cout << "\n__________________________________________________________\n";
 	
+	// using switch statement for the 4 operations to be executed
 	switch(choice) {
 	
+	// Code for finding the absolute value of x using if else statement
 	case '1':
 		cout << "\nYou picked Operation 1: Absolute value of x\n";
 		cout << "\nEnter the value of x: ";
@@ -55,7 +56,7 @@ cout << "\n__________________________________________________________\n";
 		
 		break;
 		
-		
+	// finding the factorial of x using the for loop statement	
 	case '2': 
 		cout << "\nYou picked Operation 2: Factorial of x\n";
 		cout << "\nEnter a positive value of x: ";
@@ -97,6 +98,7 @@ cout << "\n__________________________________________________________\n";
 	
   	break;
   	
+  	// determining whether x is divisible by y using if else statement
   	case '4':
   		cout << "\nYou picked Operation 4: Determine whether x is divisible of y\n";
 		cout << "\nEnter the value of x: ";
@@ -115,7 +117,8 @@ cout << "\n__________________________________________________________\n";
 		cout << "Press 0 to Exit the program" << endl;	
 		cin >> nextchoice;
 		
-	break;
+		break;
+		
     	
 	default:
     
@@ -126,12 +129,13 @@ cout << "\n__________________________________________________________\n";
 	}	
     
     
-} while (nextchoice);	
+} while (nextchoice);
 
 _getch();
 return 0;
 }
 
+// formula for finding x raise to  y , the exponent may be either positive or negative
 double rasing(double x, double y){
   
    if(y == 0){
